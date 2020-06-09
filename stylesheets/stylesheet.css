@@ -158,7 +158,8 @@ button.bx--btn::-moz-focus-inner { padding: 0; border: 0; }
 button.bx--btn .bx--btn__icon { position: relative; vertical-align: middle; top: -1px; }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { button.bx--btn .bx--btn__icon { top: 0; } }
-.bx--btn { box-sizing: border-box; margin: 0; padding: 0; border: 0; font-size: 100%; font-family: inherit; vertical-align: baseline; font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.875rem; font-weight: 600; height: 2.5rem; padding: 0 1rem; border-radius: 0; text-align: center; text-decoration: none; transition-duration: 250ms; transition-timing-function: ease-in; white-space: nowrap; line-height: 16px; }
+.bx--btn { box-sizing: border-box; margin: 0; padding: 0; border: 0; font-size: 100%; font-family: inherit; vertical-align: baseline; font-family: "
+    -plex-sans", Helvetica Neue, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.875rem; font-weight: 600; height: 2.5rem; padding: 0 1rem; border-radius: 0; text-align: center; text-decoration: none; transition-duration: 250ms; transition-timing-function: ease-in; white-space: nowrap; line-height: 16px; }
 
 .bx--btn > *, .bx--btn > *:before, .bx--btn > *:after { box-sizing: inherit; }
 
