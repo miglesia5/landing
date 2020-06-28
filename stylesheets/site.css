@@ -29,7 +29,7 @@ body {
 
 nav {
     height: 41px;
-    background-color: white;
+    background-color: darkblue;
 }
 
 .navbar-titles a {
@@ -73,7 +73,7 @@ footer a {
     padding: 0px 0px 50px;
 }
 
-.row .col-md-3 .actions  {
+.actions  {
     marigin-left: 100px
 
 }
@@ -97,17 +97,6 @@ footer a {
 
 .hero small {
     font-size: 25px;
-}
-
-.hero .sub-hero .carousel_container {
-    width: 700px;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero a {
-    font-size: 12px;
 }
 
 .content-section {
