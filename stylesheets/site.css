@@ -10,9 +10,7 @@ body {
 .navbar-brand {
     font-family: Consolas, "andale mono", "lucida console", monospace;
     color: black;
-
 }
-
 
 .nav-item {
     display: inline-block;
@@ -76,6 +74,11 @@ footer a {
     background: #fff;
     margin: 0px;
     padding: 0px 0px 50px;
+}
+
+.actions {
+    marigin-left: 5px
+
 }
 
 .hero {
