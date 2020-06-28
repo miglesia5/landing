@@ -20,34 +20,14 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="navbarToggle">
-          <div class="navbar-titles">
-
-            
-            {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Inciar Sesion</a>
-                <a class="nav-item nav-link" href="{{ url_for('users.registration') }}">Registrate</a>
-
-            {% endif %}
-
-        </div>
-    </div>
+      
+          <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-titles">
+              </div>
+          </div>
 </nav>
 
-<div class="message">
-<div class="col-md-12">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-</div>
-</div>
-
+    
 
 
 <div class="main_content">
