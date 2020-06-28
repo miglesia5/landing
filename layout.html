@@ -11,9 +11,6 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"/>
 
-    {% block additional_css %}{% endblock %}
-
-
 
 </head>
 
@@ -26,24 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarToggle">
           <div class="navbar-titles">
 
-            {% if current_user.is_authenticated %}
-                {% if current_user.role == "user" %}
-                    <a class="nav-item nav-link" href="{{ url_for('carts.user_carts', fname=fname) }}"><img class="social-img" src="{{ url_for('static', filename='photos/cart.jpg')}}"></a>
-                    <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Cuenta</a>
-                    <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Cerrar Sesion</a>
-
-
-                {% endif %}
-
-                {% if current_user.role == "admin" %}
-
-                    <a class="nav-item nav-link" href="{{ url_for('admins.index') }}">Admin</a>
-                    <a class="nav-item nav-link" href="{{ url_for('carts.user_carts', fname=fname) }}"><img class="social-img" src="{{ url_for('static', filename='photos/cart.jpg')}}"></a>
-                    <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Cuenta</a>
-                    <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Cerrar Sesion</a>
-
-                {% endif %}
-
+            
             {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Inciar Sesion</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.registration') }}">Registrate</a>
@@ -71,22 +51,24 @@
 
 
 <div class="main_content">
-    {% block main_content %}{% endblock %}
-    {% block additional %}{% endblock %}
+ 
+    Hola
+    
+    
+    
 </div>
 
 <footer>
-    <div class="copyright">
-        Esta Pagina fue construida para crear experiencias de Diseño.<br>
-        Su objetico es mostrar, modelar y entender los deseos de nuestos Clientes.<br>
+    <div class="disclaimer">
+        Hola<br>
         <br>
-        <br>Puedes tambien visitar nuestras paginas sociales
+        <br>Chau
 
         <p>
-            <a href="https://www.instagram.com/karinalorancastudio/?hl=es-la">
-                <img class="social-img" src="{{ url_for('static', filename='photos/insta.png')}}"></a>
-            <a href="https://www.facebook.com/karinalorancastudio/?modal=admin_todo_tour">
-                <img class="social-img" src="{{ url_for('static', filename='photos/face.png')}}"></a>
+            <a href="#">
+                <img class="social-img" src="#"></a>
+            <a href="#">
+                <img class="social-img" src="#"></a>
         </p>
 
     </div>
@@ -102,6 +84,3 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-
-
-{% block additional_js %}{% endblock %}
