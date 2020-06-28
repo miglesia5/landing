@@ -37,6 +37,177 @@
         </h1>
     </div>
     
+    <div class="row">
+       <div class="col-md-2">
+           <div class="actions">
+           <h2>Actions</h2>
+           <div class="accordion" id="accordionExample">
+               
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Bottoms Up Analysis
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                      
+                      <p><a class="navigation_link" href="bottomsup.html">Overview Page</a></p>
+                      <p><a class="navigation_link" href="https://github.com/miglesia5/poc_bua">Git Hub Repo</a></p>	
+                        
+                  </div>
+                </div>
+              </div>
+               
+               
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Collapsible Group Item #2
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Collapsible Group Item #3
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+                       </div>
+
+
+            <div class="col-md-8">
+
+                <div class="content-section-admin">
+
+                    <legend class="border-bottom mb-2">Ordenes pendientes de Envio</legend>
+
+                     <a class="btn btn-outline-primary" href="{{ url_for('admins.delivery_stats') }}">Revisar Envios</a> </td>
+
+                    <div class="table-responsive">
+                        <table class="table table-sm table-condensed table-striped" id="Cart">
+                            <thead>
+                            <tr>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Diseño</th>
+                                <th scope="col">Cantiada</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in items_payed %}
+                                <td scope="col"> {{ i.author.fname }}</td>
+                                <td scope="col"> {{ i.product_name }}</td>
+                                <td scope="col"> {{ i.quantity }} </td>
+                                <td scope="col">  $ {{ "{0:.1f}".format((i.price)*(i.quantity)) }}</td>
+
+                                <div class="buttons">
+
+                                    <td><a class="btn btn-secondary btn-sm m-1" href="{{ url_for('admins.delivery_detail', itemid=i.itemid) }}">Detalle</a></td>
+                                    <td scope="col"> <a class="btn btn-success btn-sm m-1" href="{{ url_for('admins.add_delivery', itemid=i.itemid) }}">Mover a Enviado</a> </td>
+                                </div>
+
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="content-section-admin">
+
+                    <legend class="border-bottom mb-2">Ordenes Pendientes de Pago</legend>
+
+                    <div class="table-responsive">
+                        <table class="table table-sm table-condensed table-striped" id="Cart">
+                            <thead>
+                            <tr>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Procuto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in items_ordered %}
+                                <td scope="col"> {{ i.author.fname }}</td>
+                                <td scope="col"> {{ i.product_name }}</td>
+                                <td scope="col"> {{ i.quantity }} </td>
+                                <td scope="col">  $ {{ "{0:.1f}".format((i.price)*(i.quantity)) }}</td>
+
+                                <div class="buttons">
+                                    <td><a class="btn btn-secondary btn-sm m-1" href="{{ url_for('admins.delivery_detail', itemid=i.itemid) }}">Detalle</a></td>
+                                </div>
+
+                                    <td scope="col"> <a class="btn btn-primary btn-sm m-1" href="{{ url_for('admins.move_to_pay_items', itemid=i.itemid) }}">Mover a Pagado</a> </td>                                 </div>
+                                 </div>
+                           </div>
+                                </div>
+
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-2">
+                <h2> Categorias </h2>
+
+
+                {% for c in categories %}
+                    <div class="categories-admin">
+                        <div class="title"><a href="/category/{{ c.id }}">{{ c.category_name }} </a></div>
+                    </div>
+                {% endfor %}
+
+             <hr>
+
+            <h2> Diseños </h2>
+
+
+
+                {% for p in products %}
+                    <div class="categories-admin-products">
+                        <div class="title"><a href="/product/{{ p.productid }}">{{ p.product_name }} </a></div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    
     
     
 </div>
